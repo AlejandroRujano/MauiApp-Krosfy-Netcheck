@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp_Krosfy_Netcheck.Resources.Views.ContentKrosfyNetCheck"
+             Title="ContentKrosfyNetCheck"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#00003e"
+             xmlns:model="clr-namespace:MauiApp_Krosfy_Netcheck.Resources.Model">
+    <ScrollView>
+        <Grid ColumnDefinitions="*" RowDefinitions="AUTO,AUTO,AUTO,AUTO,AUTO,AUTO" Margin="12,20,12,12">
+            <!-- PRIMERA FILA -->
+            <FlexLayout Direction="Row" Grid.Column="0" Grid.Row="0" JustifyContent="SpaceBetween">
+                <ImageButton Source="flecharegresar"
+                             HeightRequest="50"
+                             WidthRequest="50"
+                             x:Name="BtnRegresar"
+                             Clicked="BtnRegresar_Clicked"
+                             VerticalOptions="Center"
+                             >
+                </ImageButton>
+                <Label Text="Mi Informacion"
+                       FontAttributes="Bold"
+                       FontSize="32"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="0,0,6,0"
+                       >
+                </Label>
+            </FlexLayout>
+            <!-- SEGUNDA FILA -->
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*" Grid.Row="1" Grid.Column="0" ColumnSpacing="20" RowSpacing="24" Margin="12,30,12,18" x:DataType="model:Adaptador" x:Name="GridSuperior">
+                <Border BackgroundColor="#00003e" Stroke="#3733ac" StrokeThickness="2.5" Grid.Column="0" Grid.Row="0" Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15,15,15,15">
+                        </RoundRectangle>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Padding="6,0,6,0" >
+                        <Label
+                            Text="Adaptador"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            >
+                        </Label>
+                        <Label
+                            Text="{Binding Name}"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                            >
+                        </Label>
+                    </VerticalStackLayout>
+                </Border>
+                <Border BackgroundColor="#00003e" Stroke="#6441b6" StrokeThickness="2.5" Grid.Column="1" Grid.Row="0"  Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15,15,15,15">
+                        </RoundRectangle>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Padding="6,0,6,0">
+                        <Label
+                            Text="IP"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            >
+                        </Label>
+                        <Label
+                            Text="{Binding IPv4}"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            >
+                        </Label>
+                    </VerticalStackLayout>
+                </Border>
+                <Border BackgroundColor="#00003e" Stroke="#3733ac" StrokeThickness="2.5" Grid.Column="0" Grid.Row="1"  Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15,15,15,15">
+                        </RoundRectangle>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Padding="6,0,6,0">
+                        <Label
+                            Text="Velocidad Mbps"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalTextAlignment="Center"
+                            >
+                        </Label>
+                        <Label
+                            Text="{Binding VelocidadMbps}"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            >
+                        </Label>
+                    </VerticalStackLayout>
+                </Border>
+                <Border BackgroundColor="#00003e" Stroke="#6441b6" StrokeThickness="2.5" Grid.Column="1" Grid.Row="1"  Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15,15,15,15">
+                        </RoundRectangle>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Padding="6,0,6,0">
+                        <Label
+                            Text="ID"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            >
+                        </Label>
+                        <Label
+                            Text="{Binding Id}"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            >
+                        </Label>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+            <!-- TERCERA FILA -->
+            <VerticalStackLayout Grid.Row="2" Margin="20,20,20,30">
+                <Label
+                    Text="Mi Direccion"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    Padding="8"
+                >
+                </Label>
+                <Border BackgroundColor="#00003e" Stroke="#6441b6" StrokeThickness="2.5" Padding="12">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="50,50,50,50">
+                        </RoundRectangle>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout>
+                        <Label
+                            Text="Titulo 1"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            >
+                        </Label>
+                        <Label
+                            Text="AQUI DEBERIA IR ALGUNA DIRECCION, NO SE SU CASA, O LA BODEGA DE LA ESQUINA"
+                            FontSize="16"
+                            TextColor="White"
+                            Padding="12"
+                            HorizontalTextAlignment="Center"
+                            >
+                        </Label>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+            <!-- CUARTA FILA -->
+            <Button
+                Margin="0,0,20,0"
+                Grid.Row="3"
+                Text="Mostras Más"
+                TextColor="White"
+                FontSize="11"
+                FontAttributes="Bold"
+                CharacterSpacing="1.25"
+                Padding="20,15,20,15"
+                BackgroundColor="#3733ac"
+                BorderColor="#3733ac"
+                CornerRadius="15"
+                BorderWidth="14"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                x:Name="BtnMostrasMas"
+                Clicked="BtnMostrasMas_Clicked"
+                >
+            </Button>
+
+            <!-- QUINTA FILA -->
+            <Grid RowDefinitions="*,*,*,*,*" Grid.Row="4" RowSpacing="15" Margin="12,12,12,30" x:Name="GridDesplegable" x:DataType="model:Adaptador" IsVisible="false">
+                <VerticalStackLayout Padding="6,0,6,0" Grid.Row="0" x:Name="VerticalDesplegable1">
+                    <Label
+                            Text="Adaptador"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            Padding="10,2,10,2"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            >
+                    </Label>
+                    <Border BackgroundColor="#00003e" Stroke="#3733ac" StrokeThickness="2.5">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,15,15,15">
+                            </RoundRectangle>
+                        </Border.StrokeShape>
+                        <Label
+                            Text="{Binding Name}"
+                            FontSize="13"
+                            TextColor="White"
+                            Padding="16"
+                            >
+                        </Label>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout Padding="6,0,6,0"  Grid.Row="1" x:Name="VerticalDesplegable2">
+                    <Label
+                            Text="IP"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            TextColor="White"
+                            Padding="10,2,10,2"
+                            VerticalOptions="Center"
+                            >
+                    </Label>
+                    <Border BackgroundColor="#00003e" Stroke="#6441b6" StrokeThickness="2.5">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,15,15,15">
+                            </RoundRectangle>
+                        </Border.StrokeShape>
+                        <Label
+                            Text="{Binding IPv4}"
+                            FontSize="13"
+                            TextColor="White"
+                            Padding="16"
+                            >
+                        </Label>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout Padding="6,0,6,0" Grid.Row="2" x:Name="VerticalDesplegable3">
+                    <Label
+                            Padding="10,2,10,2"
+                            Text="Velocidad Mbps"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            >
+                    </Label>
+                    <Border BackgroundColor="#00003e" Stroke="#3733ac" StrokeThickness="2.5">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,15,15,15">
+                            </RoundRectangle>
+                        </Border.StrokeShape>
+                        <Label
+                            Padding="16"
+                            Text="{Binding VelocidadMbps}"
+                            FontSize="13"
+                            TextColor="White"
+                            >
+                        </Label>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout Padding="6,0,6,0" Grid.Row="3" x:Name="VerticalDesplegable4">
+                    <Label
+                            Padding="10,2,10,2"
+                            Text="ID"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            >
+                    </Label>
+                    <Border BackgroundColor="#00003e" Stroke="#6441b6" StrokeThickness="2.5">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,15,15,15">
+                            </RoundRectangle>
+                        </Border.StrokeShape>
+                        <Label
+                            Text="{Binding Id}"
+                            FontSize="13"
+                            TextColor="White"
+                            Padding="16"
+                            >
+                        </Label>
+                    </Border>
+                </VerticalStackLayout>
+                <VerticalStackLayout Padding="6,0,6,0" Grid.Row="4" x:Name="VerticalDesplegable5">
+                    <Label
+                        Padding="10,2,10,2"
+                            Text="Descripcion"
+                            FontAttributes="Bold"
+                            FontSize="13"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            >
+                    </Label>
+                    <Border BackgroundColor="#00003e" Stroke="#3733ac" StrokeThickness="2.5">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15,15,15,15">
+                            </RoundRectangle>
+                        </Border.StrokeShape>
+                        <Label
+                            Text="{Binding Descripcion}"
+                            FontSize="13"
+                            TextColor="White"
+                            Padding="16"
+                            >
+                        </Label>
+                    </Border>
+                </VerticalStackLayout>
+            </Grid>
+            <!-- SEXTA FILA -->
+            <Image 
+                Source="check2.png"
+                HeightRequest="280"
+                WidthRequest="280"
+                Grid.Column="0"
+                Grid.Row="5"
+                Margin="0,32,0,32"
+                x:Name="ImgCheck"
+                >
+            </Image>
+        </Grid>
+    </ScrollView>
+</ContentPage>

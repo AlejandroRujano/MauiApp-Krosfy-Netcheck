@@ -37,7 +37,7 @@ public partial class ContentKrosfyNetCheck : ContentPage
 
         GridDesplegable.BindingContext = _adaptadorActivo;
 
-        _animacionSacudirPadre.Commit(this, "Sacudir", 16, 1000, Easing.Linear,
+        _animacionSacudirPadre.Commit(this, "Sacudir", 16, 1500, Easing.Linear,
                     null, () => false);
 
         //await ImgCheck.ScaleTo(1.25, 2500, Easing.Linear);

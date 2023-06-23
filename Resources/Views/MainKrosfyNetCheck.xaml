@@ -4,7 +4,8 @@
              x:Class="MauiApp_Krosfy_Netcheck.Resources.Views.MainKrosfyNetCheck"
              Title="MainKrosfyNetCheck"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#00003e">
+             BackgroundColor="#00003e"
+             xmlns:local="clr-namespace:MauiApp_Krosfy_Netcheck">
     <FlexLayout Direction="Column" Margin="8">
         <Grid RowDefinitions="AUTO,AUTO,AUTO,AUTO" ColumnDefinitions="*">
             <!-- PRIMERA FILA -->
@@ -13,19 +14,21 @@
                          HeightRequest="35"
                          WidthRequest="35"
                          Grid.Column="0"
+                         Grid.Row="0"
                          HorizontalOptions="Start">
                 </ImageButton>
-                <Image Source="logoapp.png"
-                   HeightRequest="50"
-                   WidthRequest="50"
-                   Grid.Column="1"
-                   HorizontalOptions="End"
-                   Aspect="Fill"
-                >
+                <Image  Source="logoapp.png"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HorizontalOptions="End"
+                        Aspect="Fill"
+                    >
                 </Image>
             </Grid>
             <!-- SEGUNDA FILA -->
-            <VerticalStackLayout Margin="8" Grid.Row="1">
+            <VerticalStackLayout Margin="8" Grid.Row="1" Grid.Column="0">
                 <Label
                     Text="Bienvenido a"
                     TextColor="White"
@@ -46,21 +49,35 @@
                 </Label>
             </VerticalStackLayout>
             <!-- TERCERA FILA -->
-            <ImageButton Source="cargar2"
+            <ImageButton
                      HeightRequest="300"
                      WidthRequest="300"
                      x:Name="ImgCentral"
                      Clicked="BtnAnalizar_Clicked"
                      HorizontalOptions="Center"
                      Grid.Row="2"
+                     Grid.Column="0"
+                    Source="cargar2"
                      >
+                
             </ImageButton>
+            <Image>
+                <Image.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <On Platform="Android" Value="cargar.png" />
+                        <On Platform="iOS" Value="cargar.png" />
+                        <On Platform="UWP" Value="Assets/cargar.png" />
+                    </OnPlatform>
+                </Image.Source>
+            </Image>
+
             <!-- CUARTA FILA -->
             <Border
                 Stroke="#a001f6"
                 StrokeThickness="5"
                 x:Name="BordeBtnAnalizar"
                 Grid.Row="3"
+                Grid.Column="0"
                 HorizontalOptions="Center"
                 >
                 <Border.StrokeShape>
@@ -69,14 +86,14 @@
                 </Border.StrokeShape>
                 <Button
                     Text="ANALIZAR"
-                TextColor="White"
-                FontSize="36"
-                FontAttributes="Bold"
-                CharacterSpacing="1.25"
-                BackgroundColor="#00003e"
-                CornerRadius="50"
-                IsEnabled="False"
-                Padding="36,16,36,16"   
+                    TextColor="White"
+                    FontSize="36"
+                    FontAttributes="Bold"
+                    CharacterSpacing="1.25"
+                    BackgroundColor="#00003e"
+                    CornerRadius="50"
+                    IsEnabled="False"
+                    Padding="36,16,36,16"   
                 >
                 </Button>
             </Border>
@@ -94,6 +111,7 @@
                 x:Name="BtnAnalizar"
                 Clicked="BtnAnalizar_Clicked"
                 Grid.Row="3"
+                Grid.Column="0"
                 HorizontalOptions="Center"
                 Margin="5"
                 >

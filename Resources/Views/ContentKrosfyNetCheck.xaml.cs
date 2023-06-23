@@ -1,5 +1,6 @@
 using MauiApp_Krosfy_Netcheck.Resources.Model;
 using System.Net.NetworkInformation;
+using Microsoft.Maui.Devices.Sensors;
 
 namespace MauiApp_Krosfy_Netcheck.Resources.Views;
 
@@ -40,6 +41,7 @@ public partial class ContentKrosfyNetCheck : ContentPage
         _animacionSacudirPadre.Commit(this, "Sacudir", 16, 1500, Easing.Linear,
                     null, () => false);
 
+        
         //await ImgCheck.ScaleTo(1.25, 2500, Easing.Linear);
         //ImgCheck.FadeTo(1, 1000, Easing.Linear);
         //await ImgCheck.ScaleTo(1, 1200, Easing.Linear);
@@ -70,6 +72,15 @@ public partial class ContentKrosfyNetCheck : ContentPage
             await VerticalDesplegable3.FadeTo(1, 200, Easing.Linear);
             await VerticalDesplegable4.FadeTo(1, 200, Easing.Linear);
             await VerticalDesplegable5.FadeTo(1, 200, Easing.Linear);
+
+            string address = "Merida Avenida Cardenal Quintero";
+
+            IEnumerable<Location> locations = await Geocoding.Default.GetLocationsAsync(address);
+
+            Location location = locations?.FirstOrDefault();
+
+            if (location != null)
+                await DisplayAlert("Ubicacion",$"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}","OK");
         }
         else
         {

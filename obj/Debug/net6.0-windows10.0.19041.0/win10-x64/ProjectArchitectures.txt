@@ -1,1 +1,1 @@
-C:\Users\aleja\Source\Repos\MauiApp Krosfy Netcheck\MauiApp Krosfy Netcheck.csproj;x64
+C:\Users\Fran\source\repos\MauiApp-Krosfy-Netcheck\MauiApp Krosfy Netcheck.csproj;x64
